@@ -1,0 +1,44 @@
+﻿@model LicenseVerification.Models.IndividualData
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Analyse", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container" style="margin-top: 20px;">
+        <div class="row">
+            <div class='col-md-6'>
+                <p>Upload Your License</p>
+                <input type="file" name="Image" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
+                <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="border: #00008B 1px solid; max-height: 300px"/>
+            </div>
+            <div class='col-md-6'>
+                <p>Please Type Your Name</p>
+                <input name="Name" type="text" placeholder="your name" required/>
+                <p>Choose your B.O.D</p>
+                <input name="Birthday" type="date" placeholder="your birthday" required>
+            </div>
+        </div>
+        <br/>
+        <div class="col-md-12 row">
+            <button class="btn btn-default" type="submit">Analyse Image</button>
+        </div>
+
+    </div>
+}
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imageShow')
+                    .attr('src', e.target.result);
+
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
