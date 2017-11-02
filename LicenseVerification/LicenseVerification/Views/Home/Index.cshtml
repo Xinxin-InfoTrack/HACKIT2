@@ -3,72 +3,49 @@
     ViewBag.Title = "Home Page";
 }
 
-<form action="@Url.Action("Analyse", "Home")" id="mainForm" enctype="multipart/form-data" class="container" method="post">
-
-    <div class="container" style="margin-top: 20px;">
-        <div class="row">
-            <div class='col-md-6'>
-                <p>Upload Your License</p>
-                <input type="file" name="Image" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
-                <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="border: #00008B 1px solid; max-height: 300px" />
+<div class="jumbotron" style="margin-top: 20px;">
+    <form action="@Url.Action("Analyse", "Home")" id="mainForm" enctype="multipart/form-data"  method="post">
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <p>Upload Your License</p>
+                    <input type="file" class="form-control" name="Image" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
+                    <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px" />
+                </div>
+                <div class='col-md-6'>
+                    <div class="form-group">
+                        <span>Name</span>
+                        <input name="Name" class="form-control" type="text" placeholder="your name" required/>
+                        <span>B.O.D</span>
+                        <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-6'>
-                <p>Please Type Your Name</p>
-                <input name="Name" type="text" placeholder="your name" required />
-                <p>Choose your B.O.D</p>
-                <input name="Birthday" type="date" placeholder="your birthday" required>
+            <br />
+            <div class="col-md-12 row">
+                <button class="btn btn-default" type="submit">Analyse Image</button>
             </div>
+     </form>
+    <div id="resultPage" style="margin-top: 50px; display: none" class="row" >
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td style="vertical-align: middle; font-weight: bold">Name Match</td>
+                    <td><label id="nameMatch" class="matchSuccess"></label></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; font-weight: bold">D.O.B Match</td>
+                    <td><label id="birthMatch" class="matchSuccess"></label></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <br />
-        <div class="col-md-12 row">
-            <button class="btn btn-default" type="submit">Analyse Image</button>
+        <div class="col-md-6">
+            <label id="matchResult"></label>
         </div>
-
     </div>
- </form>
-
+</div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#imageShow')
-                    .attr('src', e.target.result);
-
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $(function() {
-        $('form').submit(function(event) {
-
-            event.preventDefault();
-
-            if ($(this).valid()) {
-                var formdata = new FormData($(this).get(0));
-
-                $.ajax({
-                    url: this.action,
-                    type: this.method,
-                    data: formdata,
-                    processData: false,
-                    contentType: false,
-                    success: function (result) {
-                        alert("something");
-                        // element is div holding the ParticalView
-                    },
-                    complete: function() {
-                    }
-                });
-            }
-            return false;
-        });
-
-    });
-</script>
+<script src="~/Scripts/Index/Index.js"></script>

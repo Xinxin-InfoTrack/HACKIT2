@@ -22,3 +22,65 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.matchSuccess {
+    background-image: url("../Image/Pass.png");
+    background-size: cover;
+    width: 60px;
+    height: 50px;
+    
+}
+
+.matchFail {
+    background-image: url("../Image/Fail.png");
+    background-size: cover;
+    width: 60px;
+    height: 50px;
+}
+
+
+.SuccessResult {
+    background-image: url("../Image/Overall_Pass.png");
+    background-size: cover;
+    width: 280px;
+    height: 200px;
+    display: block;
+    margin: -50px auto;
+}
+
+.FailResult {
+    background-image: url("../Image/Overall_Fail.png");
+    background-size: cover;
+    width: 280px;
+    height: 200px;
+    display: block;
+    margin: -50px auto;
+}
+
+#resultPage.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+#resultPage.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+.navbar-brand {
+    color: white;
+}
+
+.nav.navbar-nav a {
+    color: white;
+}
+
+.nav.navbar-nav a:hover {
+    color: white;
+    background-color: transparent
+}
+
+.jumbotron {
+    background-color: white
+}

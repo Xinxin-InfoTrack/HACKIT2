@@ -9,7 +9,5 @@ namespace LicenseVerification.Models
     {
         public bool? NameMatch { get; set; }
         public bool? BirthdayMatch { get; set; }
-        public bool? FaceMatch { get; set; }
-
     }
 }
