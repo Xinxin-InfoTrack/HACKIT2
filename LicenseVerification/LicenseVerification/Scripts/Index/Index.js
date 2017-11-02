@@ -16,12 +16,11 @@
 $(function () {
     
     $('form').submit(function (event) {
-
+        $('.loader').show();
         event.preventDefault();
 
         if ($(this).valid()) {
             var formdata = new FormData($(this).get(0));
-
             $.ajax({
                 url: this.action,
                 type: this.method,
@@ -39,7 +38,10 @@ $(function () {
                     } else {
                         $('#matchResult').addClass('FailResult');
                     }
-                    $('#resultPage').show();
+                    setTimeout(function() {
+                        $('.loader').hide();
+                        $('#resultPage').show();
+                    }, 1000);
                 },
                 complete: function () {
                 }

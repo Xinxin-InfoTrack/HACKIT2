@@ -16,7 +16,7 @@ namespace LicenseVerification.Controllers
 
         public JsonResult Analyse(IndividualData data)
         {
-            var result = new MatchModel {NameMatch = true, BirthdayMatch = true};
+            var result = new MatchModel {NameMatch = true, BirthdayMatch = false};
             return Json(result);
         }
 

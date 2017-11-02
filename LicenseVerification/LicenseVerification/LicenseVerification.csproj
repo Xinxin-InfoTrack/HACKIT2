@@ -162,6 +162,7 @@
     <Content Include="Image\Overall_Fail.png" />
     <Content Include="Image\Overall_Pass.png" />
     <Content Include="Image\Pass.png" />
+    <Content Include="Image\spinner.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

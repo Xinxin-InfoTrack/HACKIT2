@@ -5,26 +5,26 @@
 
 <div class="jumbotron" style="margin-top: 20px;">
     <form action="@Url.Action("Analyse", "Home")" id="mainForm" enctype="multipart/form-data"  method="post">
-            <div class="row">
-                <div class='col-md-6 form-group'>
-                    <p>Upload Your License</p>
-                    <input type="file" class="form-control" name="Image" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
-                    <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px" />
-                </div>
-                <div class='col-md-6'>
-                    <div class="form-group">
-                        <span>Name</span>
-                        <input name="Name" class="form-control" type="text" placeholder="your name" required/>
-                        <span>B.O.D</span>
-                        <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required>
-                    </div>
+        <div class="row">
+            <div class='col-md-6 form-group'>
+                <p>Upload Your License</p>
+                <input type="file" class="form-control" name="Image" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
+                <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px" />
+            </div>
+            <div class='col-md-6'>
+                <div class="form-group">
+                    <span>Name</span>
+                    <input name="Name" class="form-control" type="text" placeholder="your name" required/>
+                    <span>B.O.D</span>
+                    <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required>
                 </div>
             </div>
-            <br />
-            <div class="col-md-12 row">
-                <button class="btn btn-default" type="submit">Analyse Image</button>
-            </div>
-     </form>
+        </div>
+        <br />
+        <div class="col-md-12 row">
+            <button class="btn btn-default" type="submit">Analyse Image</button>
+        </div>
+    </form>
     <div id="resultPage" style="margin-top: 50px; display: none" class="row" >
         <div class="col-md-6">
             <table class="table">
@@ -45,6 +45,7 @@
         </div>
     </div>
 </div>
+<div class="loader" style="display: none"></div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
