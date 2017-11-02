@@ -14,10 +14,15 @@
             </div>
             <div class='col-md-6'>
                 <div class="form-group">
-                    <span>Name</span>
-                    <input name="Name" class="form-control" type="text" placeholder="your name" required/>
-                    <span>B.O.D</span>
+                    <span>First Name</span>
+                    <input name="FirstName" class="form-control" type="text" placeholder="your name" required/>
+                    <span>Last Name</span>
+                    <input name="LastName" class="form-control" type="text" placeholder="your name" required/>
+                    <span>D.O.B.</span>
                     <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required>
+                    <span>License Number</span>
+                    <input name="License" class="form-control" type="number" placeholder="your license" required>
+                    <button class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
@@ -37,6 +42,10 @@
                 <tr>
                     <td style="vertical-align: middle; font-weight: bold">D.O.B Match</td>
                     <td><label id="birthMatch" class="matchSuccess"></label></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; font-weight: bold">License Match</td>
+                    <td><label id="licenseMatch" class="matchSuccess"></label></td>
                 </tr>
                 </tbody>
             </table>

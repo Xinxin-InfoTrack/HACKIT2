@@ -35,7 +35,8 @@ $(function () {
                     $('#matchResult').removeClass();
                     $('#nameMatch').addClass(result.NameMatch ? 'matchSuccess' : 'matchFail');
                     $('#birthMatch').addClass(result.BirthdayMatch ? 'matchSuccess' : 'matchFail');
-                    if (result.NameMatch && result.BirthdayMatch) {
+                    $('#licenseMatch').addClass(result.LicenseMatch ? 'matchSuccess' : 'matchFail');
+                    if (result.NameMatch && result.BirthdayMatch && result.LicenseMatch) {
                         $('#matchResult').addClass('SuccessResult');
                     } else {
                         $('#matchResult').addClass('FailResult');
