@@ -5,6 +5,8 @@
         reader.onload = function (e) {
             $('#imageShow')
                 .attr('src', e.target.result);
+
+            $('#imageData').val(e.target.result);
         };
 
 

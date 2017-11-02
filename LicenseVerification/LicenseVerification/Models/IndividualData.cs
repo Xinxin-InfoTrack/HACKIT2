@@ -10,6 +10,6 @@ namespace LicenseVerification.Models
     {
         public string Name { get; set; }
         public string Birthday { get; set; }
-        public HttpPostedFileBase Image { get; set; }
+        public string Image { get; set; }
     }
 }
