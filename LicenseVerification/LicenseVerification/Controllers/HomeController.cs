@@ -14,9 +14,10 @@ namespace LicenseVerification.Controllers
             return View();
         }
 
-        public string Analyse(IndividualData data)
+        public JsonResult Analyse(IndividualData data)
         {
-            return "something";
+            var result = new MatchModel {NameMatch = true, BirthdayMatch = true, FaceMatch = true};
+            return Json(result);
         }
 
       
