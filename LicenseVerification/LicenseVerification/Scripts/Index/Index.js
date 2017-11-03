@@ -56,6 +56,9 @@ $(function () {
                 } else {
                     $('#matchResult').addClass('FailResult');
                 }
+
+                $("#googleAnalyseResult1").val(result.GoogleAnylyseResult);
+
                 setTimeout(function () {
                     $('.loader').hide();
                     $('#resultPage').show();
@@ -95,6 +98,9 @@ $(function () {
                 } else {
                     $('#matchResult').addClass('FailResult');
                 }
+
+                $("#googleAnalyseResult1").val(result.GoogleAnylyseResult);
+
                 setTimeout(function () {
                     $('.loader').hide();
                     $('#resultPage').show();
@@ -138,6 +144,8 @@ $(function () {
                     } else {
                         $('#matchResult2').addClass('FailResult');
                     }
+
+                    $("#googleAnalyseResult2").val(result.GoogleAnylyseResult);
                     setTimeout(function () {
                         $('.loader').hide();
                         $('#resultPage2').show();
@@ -176,6 +184,9 @@ $(function () {
                 } else {
                     $('#matchResult2').addClass('FailResult');
                 }
+
+                $("#googleAnalyseResult2").val(result.GoogleAnylyseResult);
+
                 setTimeout(function () {
                     $('.loader').hide();
                     $('#resultPage2').show();
