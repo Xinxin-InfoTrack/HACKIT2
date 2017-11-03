@@ -4,35 +4,131 @@
 }
 
 <div class="jumbotron" style="margin-top: 20px;">
-    <form action="@Url.Action("Analyse", "Home")" id="mainForm" enctype="multipart/form-data"  method="post">
+    <div>
         <div class="row">
-            <div class='col-md-6 form-group'>
-                <p>Upload Your License</p>
-                <input type="file" class="form-control" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
-                <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px"  />
-                <input id="imageData" type="hidden" name="Image" value=""/>
+            <div class='col-md-4 form-group'>
+                @*<p>Upload Your License</p>
+                    <input type="file" class="form-control" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
+                    <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px"  />
+                    <input id="imageData" type="hidden" name="Image" value=""/>*@
+                <img id="image1" src='@Url.Content("~/Image/1.jpg")' alt="Your Image is Here" class="img-responsive" style="max-height: 500px" />
             </div>
-            <div class='col-md-6'>
+            <div class='col-md-4'>
                 <div class="form-group">
                     <span>First Name</span>
-                    <input name="FirstName" class="form-control" type="text" placeholder="your name" required/>
+                    <input name="FirstName" class="form-control" type="text" placeholder="your name" required id="firstName1" />
                     <span>Last Name</span>
-                    <input name="LastName" class="form-control" type="text" placeholder="your name" required/>
+                    <input name="LastName" class="form-control" type="text" placeholder="your name" required id="firstName2" />
                     <span>D.O.B.</span>
-                    <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required>
+                    <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required id="firstDob">
                     <span>License Number</span>
-                    <input name="License" class="form-control" type="number" placeholder="your license" required>
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <input name="License" class="form-control" type="number" placeholder="your license" required id="firstLicense">
+                    <button class="btn btn-primary" type="button" id="firstAnalyse">Analyse</button>
+                    <button class="btn btn-primary" type="button" id="firstBetterAnalyse">Better Analyse</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="resultPage" style="margin-top: 50px; display: none" class="row">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">Name Match</td>
+                                <td><label id="nameMatch" class="matchSuccess"></label></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">D.O.B Match</td>
+                                <td><label id="birthMatch" class="matchSuccess"></label></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">License Match</td>
+                                <td><label id="licenseMatch" class="matchSuccess"></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-6">
+                        <label id="matchResult"></label>
+                    </div>
                 </div>
             </div>
         </div>
         <br />
-        <div class="col-md-12 row">
-            @*<button class="btn btn-default" type="submit">Analyse Image</button>*@
+    </div>
+
+
+
+    <hr />
+
+    <div>
+        <div class="row">
+            <div class='col-md-4 form-group'>
+                @*<p>Upload Your License</p>
+                    <input type="file" class="form-control" accept="image/*" onchange="readURL(this);" style="margin-bottom: 20px" required>
+                    <img id="imageShow" src="#" alt="Your Image is Here" class="img-responsive" style="max-height: 300px"  />
+                    <input id="imageData" type="hidden" name="Image" value=""/>*@
+                <img id="image2" src='@Url.Content("~/Image/2.jpg")' alt="Your Image is Here" class="img-responsive" style="max-height: 500px" />
+            </div>
+            <div class='col-md-4'>
+
+                <div class="form-group">
+                    <span>First Name</span>
+                    <input name="FirstName" class="form-control" type="text" placeholder="your name" required id="secondName1" />
+                    <span>Last Name</span>
+                    <input name="LastName" class="form-control" type="text" placeholder="your name" required id="secondName2" />
+                    <span>D.O.B.</span>
+                    <input name="Birthday" class="form-control" type="date" placeholder="your birthday" required id="secondDob">
+                    <span>License Number</span>
+                    <input name="License" class="form-control" type="number" placeholder="your license" required id="secondLicense">
+                    <button class="btn btn-primary" type="button" id="secondAnalyse">Analyse</button>
+                    <button class="btn btn-primary" type="button" id="secondBetterAnalyse">Better Analyse</button>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div id="resultPage2" style="margin-top: 50px; display: none" class="row">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">Name Match</td>
+                                <td><label id="nameMatch2" class="matchSuccess"></label></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">D.O.B Match</td>
+                                <td><label id="birthMatch2" class="matchSuccess"></label></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle; font-weight: bold">License Match</td>
+                                <td><label id="licenseMatch2" class="matchSuccess"></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-6">
+                        <label id="matchResult2"></label>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <div id="resultPage" style="margin-top: 50px; display: none" class="row" >
-        <div class="col-md-6">
+        <br />
+        @*<div class="col-md-12 row">
+                <button class="btn btn-default" type="submit">Analyse Image</button>
+            </div>*@
+    </div>
+
+
+
+
+
+    <hr />
+
+
+
+
+
+
+
+
+
+    @*<div id="resultPage" style="margin-top: 50px; display: none" class="row" >
+        @*<div class="col-md-6">
             <table class="table">
                 <tbody>
                 <tr>
@@ -49,11 +145,12 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="col-md-6">
-            <label id="matchResult"></label>
-        </div>
-    </div>
+        </div>*@
+    @*<div class="col-md-6">
+                <label id="matchResult"></label>
+            </div>
+        </div>*@
+
 </div>
 <div class="loader" style="display: none"></div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

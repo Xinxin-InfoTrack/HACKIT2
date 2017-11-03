@@ -189,6 +189,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\1.jpg" />
+    <Content Include="Image\2.jpg" />
     <Content Include="Image\Fail.png" />
     <Content Include="Image\infotrack.png" />
     <Content Include="Image\Overall_Fail.png" />
