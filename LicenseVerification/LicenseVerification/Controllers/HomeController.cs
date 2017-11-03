@@ -133,5 +133,19 @@ namespace LicenseVerification.Controllers
 
             return Json(new MatchModel { NameMatch = true, BirthdayMatch = false, LicenseMatch = false, GoogleAnylyseResult = " test" });
         }
+
+
+
+
+        public ActionResult Research()
+        {
+
+
+
+            return View();
+        }
+
+
+
     }
 }
