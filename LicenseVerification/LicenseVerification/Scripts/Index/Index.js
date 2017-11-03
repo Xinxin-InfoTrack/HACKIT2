@@ -99,7 +99,7 @@ $(function () {
                     $('#matchResult').addClass('FailResult');
                 }
 
-                $("#googleAnalyseResult1").val(result.GoogleAnylyseResult);
+                $("#googleAnalyseResult1better").val(result.GoogleAnylyseResult);
 
                 setTimeout(function () {
                     $('.loader').hide();
@@ -185,7 +185,7 @@ $(function () {
                     $('#matchResult2').addClass('FailResult');
                 }
 
-                $("#googleAnalyseResult2").val(result.GoogleAnylyseResult);
+                $("#googleAnalyseResult2better").val(result.GoogleAnylyseResult);
 
                 setTimeout(function () {
                     $('.loader').hide();
